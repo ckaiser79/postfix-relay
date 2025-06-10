@@ -1,0 +1,7 @@
+volume/
+*.code-workspace
+secret/
+env/production*
+.DS_Store
+.env
+app/production
