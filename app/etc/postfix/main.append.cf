@@ -1,6 +1,12 @@
-smtpd_sasl_auth_enable=yes
-broken_sasl_auth_clients=yes
-smtpd_sasl_security_options=noanonymous,noplaintext
-smtpd_sasl_tls_security_options=noanonymous
-smtpd_relay_restrictions=permit_sasl_authenticated,reject_unauth_destination
+smtpd_sasl_auth_enable=no
+
+inet_interfaces = all
 relayhost = {{RELAY_SMTP_HOST}}
+
+# allow relay in same network
+mynetworks_style = subnet
+
+relay_domains = *
+transport_maps = hash:/etc/postfix/transport
+smtpd_relay_restrictions = permit_mynetworks
+smtpd_recipient_restrictions = permit_mynetworks
