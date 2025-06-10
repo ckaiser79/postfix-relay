@@ -1,9 +1,12 @@
 #!/bin/sh
 
 #source /app/.env
-test -z "${RELAY_SMTP_HOST}" && echo "RELAY_SMTP_HOST is not set" && exit 1
-test -z "${RELAY_SMTP_FROM}" && echo "RELAY_SMTP_FROM is not set" && exit 1
-test -z "${RELAY_SMTP_PASSWORD}" && echo "RELAY_SMTP_PASSWORD is not set" && exit 1
+test -z "${RELAY_SMTP_HOST}" && echo "RELAY_SMTP_HOST is not set" && exit 2
+test -z "${RELAY_SMTP_FROM}" && echo "RELAY_SMTP_FROM is not set" && exit 2
+test -z "${RELAY_SMTP_PASSWORD}" && echo "RELAY_SMTP_PASSWORD is not set" && exit 2
+test -z "${LOCAL_SMTP_PORT}" &&  LOCAL_SMTP_PORT=2525
+
+sed -i -e "s/^smtp /${LOCAL_SMTP_PORT} /g" /etc/postfix/master.cf
 
 sed -i "s/{{RELAY_SMTP_FROM}}/${RELAY_SMTP_FROM}/" /etc/postfix/generic
 
