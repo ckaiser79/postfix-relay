@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  mail-relay:
+    build: 
+      context: .
+      image: mail-relay
+      version: "1.0"
+    environment:
+        RELAY_SMTP_FROM: ${RELAY_SMTP_FROM}
+        RELAY_SMTP_PASSWORD: ${RELAY_SMTP_PASSWORD}
+        RELAY_SMTP_DOMAIN: ${RELAY_SMTP_DOMAIN}
+
