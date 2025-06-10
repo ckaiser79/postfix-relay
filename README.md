@@ -16,8 +16,34 @@ Add your credentials into `.env`. Then
 podman compose --file compose.yml build
 ```
 
-## Run
+## Official build
+
+See github workflow:
 
 ```bash
-podman compose --file compose.yml up
+RELEASE=$(date +%Y%m%d-%H%M%S) # for snapshots or 1.0.0 for releases
+podman build . --file Dockerfile --tag ckaiser79/postfix-relay:$RELEASE
+
+# check
+podman image ls | grep postfix
 ```
+
+# Run
+
+```bash
+# listen on port 2525 by default
+podman compose --file compose.yml up -d
+```
+
+## Configuration
+
+| Key | Description | Default |
+|:----|:----|:----|
+| `RELAY_SMTP_FROM` | Sender, which is used when authenticating on relay smtp server. | |
+| `RELAY_SMTP_PASSWORD` | Password, which is used when authenticating on relay smtp server. | |
+| `RELAY_SMTP_HOST` | *hostname:port*, which is used when authenticating on relay smtp server. | |
+| `LOCAL_SMTP_PORT` | Port, where postfix SMTP listens. | 2525 |
+
+# Usefull
+
+- `grep -v -e '^#'  main.cf | grep -v '^$'` - grep active configuration keys

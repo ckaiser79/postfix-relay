@@ -1,0 +1,11 @@
+HELO macbookpro
+MAIL FROM: dummy-from@muellmail.com
+RCPT TO: dummy-to@muellmail.com
+DATA
+Subject: Test
+From: dummy-from@muellmail.com
+To: dummy-to@muellmail.com
+Foo,
+BAR
+.
+QUIT

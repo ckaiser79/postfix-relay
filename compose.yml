@@ -1,12 +1,12 @@
 version: "3.9"
 services:
   mail-relay:
-    build: 
-      context: .
-      image: mail-relay
-      version: "1.0"
+    image: ckaiser79/postfix-relay
+    build: .
     environment:
         RELAY_SMTP_FROM: ${RELAY_SMTP_FROM}
         RELAY_SMTP_PASSWORD: ${RELAY_SMTP_PASSWORD}
-        RELAY_SMTP_DOMAIN: ${RELAY_SMTP_DOMAIN}
-
+        RELAY_SMTP_HOST: ${RELAY_SMTP_HOST}
+        LOCAL_SMTP_PORT: ${LOCAL_SMTP_PORT:-2525}
+    ports:
+      - "2525:2525"
