@@ -8,7 +8,6 @@ ARG RELAY_SMTP_DOMAIN=hochsauerland.coach
 ARG RELAY_SMTP_SERVER=smtp.strato.de:465
 
 COPY app /tmp/app
-COPY .env /app/.env
 
 WORKDIR /tmp/app
 
