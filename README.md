@@ -46,4 +46,4 @@ podman compose --file compose.yml up -d
 
 # Usefull
 
-- `grep -v -e '^#'  main.cf | grep -v '^$'` - grep active configuration keys
+- `grep -v -e '^#'  main.cf | grep -v '^$'` - grep active configuration keys    

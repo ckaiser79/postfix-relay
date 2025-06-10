@@ -1,3 +1,1 @@
-christian@api01.localdomain {{RELAY_SMTP_FROM}}
-root@api01.localdomain {{RELAY_SMTP_FROM}}
-rundeck@api01.localdomain {{RELAY_SMTP_FROM}}
+/.*/    {{RELAY_SMTP_FROM}}

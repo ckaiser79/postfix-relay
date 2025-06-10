@@ -1,0 +1,30 @@
+# Basis
+myhostname = mail.relay.local
+mydomain = relay.local
+myorigin = $mydomain
+inet_interfaces = all
+inet_protocols = ipv4
+mydestination =
+
+maillog_file = /var/log/mail.log
+
+# Open Relay (ACHTUNG: Nur für interne Testumgebungen!)
+smtpd_recipient_restrictions =
+    permit_mynetworks,
+    reject_unauth_destination
+
+mynetworks = 0.0.0.0/0
+
+# Weiterleitung
+relayhost = {{RELAY_SMTP_HOST}}
+# smtp_use_tls = yes # deprecated
+smtp_tls_security_level = encrypt
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+
+# Required by a lot, but not all SMTP Servers, which use ssl
+smtp_tls_wrappermode = yes
+
+# Authentifizierung am Relay (falls nötig)
+smtp_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd

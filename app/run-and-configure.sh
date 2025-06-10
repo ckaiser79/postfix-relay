@@ -19,4 +19,6 @@ sed -i "s/{{RELAY_SMTP_HOST}}/${RELAY_SMTP_HOST}/" /etc/postfix/main.cf
 postmap /etc/postfix/sasl_passwd
 postmap /etc/postfix/generic
 
+# logfile umleiten
+tail -n0 -F /var/log/mail.log &
 postfix start-fg
