@@ -6,6 +6,7 @@ inet_interfaces = all
 inet_protocols = ipv4
 mydestination =
 
+# TODO better log to rsyslogd to avoid a dead logfile spam harddrive
 maillog_file = /var/log/mail.log
 
 # Open Relay (ACHTUNG: Nur für interne Testumgebungen!)
