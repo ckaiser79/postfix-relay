@@ -10,4 +10,4 @@ services:
         RELAY_SMTP_PORT: ${RELAY_SMTP_PORT:-465}
         LOCAL_SMTP_PORT: ${LOCAL_SMTP_PORT:-2525}
     ports:
-      - "25:2525"
+      - "2525:25"
