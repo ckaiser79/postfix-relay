@@ -1,6 +1,9 @@
 FROM alpine:latest
 
 LABEL maintainer="Christian Kaiser <christian@hochsauerland.coach>"
+LABEL org.opencontainers.image.source=https://github.com/ckaiser79/postfix-relay
+LABEL org.opencontainers.image.description="Use postfix as a relay with SASL authentication and TLS support on the destination server. Postfix itself is unauthenticated."
+LABEL org.opencontainers.image.licenses=MIT
 
 COPY app /tmp/app
 
