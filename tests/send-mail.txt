@@ -1,4 +1,4 @@
-HELO macbookpro
+EHLO macbookpro
 MAIL FROM: dummy-from@muellmail.com
 RCPT TO: dummy-to@muellmail.com
 DATA

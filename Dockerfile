@@ -27,6 +27,6 @@ RUN mkdir /app && \
     rm -rf /tmp/app
     
 # port 25 is not available on some linux systems
-EXPOSE 2525
+EXPOSE 25
 
 CMD ["/app/run-and-configure.sh"]

@@ -41,7 +41,8 @@ podman compose --file compose.yml up -d
 |:----|:----|:----|
 | `RELAY_SMTP_FROM` | Sender, which is used when authenticating on relay smtp server. | |
 | `RELAY_SMTP_PASSWORD` | Password, which is used when authenticating on relay smtp server. | |
-| `RELAY_SMTP_HOST` | *hostname:port*, which is used when authenticating on relay smtp server. | |
+| `RELAY_SMTP_HOST` | *hostname*, which is used when authenticating on relay smtp server. | |
+| `RELAY_SMTP_PORT` | *port*, which is used when authenticating on relay smtp server. | 465 |
 | `LOCAL_SMTP_PORT` | Port, where postfix SMTP listens. | 2525 |
 
 # Usefull
