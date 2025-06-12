@@ -19,8 +19,8 @@ sed -i "s/{{RELAY_SMTP_PORT}}/${RELAY_SMTP_PORT}/" /etc/postfix/sasl_passwd
 sed -i "s/{{RELAY_SMTP_HOST}}/${RELAY_SMTP_HOST}/" /etc/postfix/main.cf
 sed -i "s/{{RELAY_SMTP_PORT}}/${RELAY_SMTP_PORT}/" /etc/postfix/main.cf
 
-postmap /etc/postfix/sasl_passwd
-postmap /etc/postfix/generic
+postmap lmdb:/etc/postfix/sasl_passwd
+postmap regexp:/etc/postfix/generic
 
 chown root:root /etc/postfix/sasl_passwd
 chmod 0600 /etc/postfix/sasl_passwd.*

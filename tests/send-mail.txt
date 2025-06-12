@@ -1,10 +1,10 @@
 EHLO macbookpro
-MAIL FROM: dummy-from@muellmail.com
-RCPT TO: dummy-to@muellmail.com
+MAIL FROM: dummy1@muellmail.com
+RCPT TO: dummy2@muellmail.com
 DATA
 Subject: Test
-From: dummy-from@muellmail.com
-To: dummy-to@muellmail.com
+From: dummy1@muellmail.com
+To: dummy2@muellmail.com
 Foo,
 BAR
 .
